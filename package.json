@@ -1,0 +1,30 @@
+{
+  "name": "premonition",
+  "version": "0.1.0",
+  "description": "A tool to help you discover if it is safe to upgrade each of your packages to the latest.",
+  "repository": "https://github.com/yleviel/premonition.git",
+  "main": "main.js",
+  "bin": "premonition",
+  "scripts": {
+    "test": "echo 'yay'"
+  },
+  "keywords": [
+    "package",
+    "testing",
+    "premonition",
+    "package",
+    "upgrade",
+    "testing",
+    "downstream",
+    "testing"
+  ],
+  "author": {
+    "name": "Yair Leviel",
+    "email": "yleviel@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "lodash": "^2.4.1",
+    "shelljs": "^0.3.0"
+  }
+}

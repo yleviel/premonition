@@ -1,0 +1,7 @@
+var main = require('./main.js'),
+    config = {};
+
+var cwd = process.cwd();
+
+console.log('working in ' + cwd);
+main.start(cwd, config);
