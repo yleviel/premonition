@@ -2,7 +2,7 @@
 
 This module is meant to help you (the developer) determine if it is safe to upgrade some or all of your packages to the latest.
 
-This application is built on a number of other libraries like Underscore. These dependencies will be pulled in when
+This application is built on a number of other libraries like *LoDash* and *ShellJS*. These dependencies will be pulled in when
 you do `npm install`.
 
 ## Installation
@@ -22,17 +22,23 @@ An example of this configuration may look like the following:
 ```
 'use strict';
 module.exports = {
-    filesToUpdate : ['package.json', 'bower.json'],
-    modulesToUpdate: [ 'grunt' ]
+    filesToCheck : ['package.json', 'bower.json'],
+    fieldsToCheck: ["devDependencies", "dependencies"],
+    modulesToCheck: null // null implies to update all and test all
 };
 ```
 
-###config.filesToUpdate
+###config.filesToCheck
 **default: ['package.json', 'bower.json'] **
 
 The specific files to update.  This value should not be a pattern, but rather an exact path.
 
-###config.modulesToUpdate
+###config.fieldsToCheck
+**default: ['devDependencies', 'dependencies'] **
+
+If specified, the value will contain a list of strings which represent the keys to look for the modules in the files being checked.
+
+###config.modulesToCheck
 **default: null **
 
 If specified, the value will contain a list of strings which will match the modules listed in the dependencies and devDependencies lists

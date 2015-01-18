@@ -60,9 +60,11 @@ var checkFile = function(filePath, fileJSON, config){
         fs.writeFileSync(filePath, JSON.stringify(json, null, 4));
         
         var modulesTested = modulesToUpdate.join(',');
-        var runResult = shell.exec("npm test");
-        
-        dependenciesTested.push(new TestResult(runResult.code === 0, modulesTested));
+        var runInstallResult = shell.exec("npm install");
+        var runTestResult = runInstallResult === 0 && shell.exec("npm test") === 0;
+
+                
+        dependenciesTested.push(new TestResult(runTestResult, modulesTested));
     });
     
     return dependenciesTested;
